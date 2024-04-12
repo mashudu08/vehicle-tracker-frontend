@@ -1,0 +1,9 @@
+body{
+    /* background-color: #f9f7f3; */
+    font-family: "DM Sans", sans-serif;
+}
+
+#map { 
+    height: 350px; 
+    width: 600px;
+}

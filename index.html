@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,100..1000&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="src/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
+     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
+    <title>Vehicle Tracking System</title>
+</head>
+<body>
+    <div class="tracking-app">
+        <h1>Vehicle Tracking System</h1>
+        <header>
+            <form class="register-form" id="register-form">
+                <div class="form-content">
+                    <label for="vehicle-make">Make</label>
+                    <input type="text" placeholder="Enter vehicle make" required class="register-form-input" id="vehicle-make"/>
+                </div>
+                <div class="form-content">
+                    <label for="vehicle-model">Model</label>
+                    <input type="text" placeholder="Enter vehicle model" required class="register-form-input" id="vehicle-model"/>
+                </div>
+                <div class="form-content">
+                    <label for="vehicle-regNum">Registration number</label>
+                    <input type="text" placeholder="Enter vehicle registration number" required class="register-form-input" id="vehicle-regNum"/>
+                </div>
+                <input type="submit" value="Register" class="register-form-btn"/>
+            </form>
+        </header>
+
+        <main>
+            <div class="registered-vehicles-container">
+                <div class="registered-vehicles" id="vehicle"></div>
+            </div>
+            <div id="map"></div>
+        </main>
+    </div>
+    
+    <script src="src/index.js"></script>
+</body>
+</html>
