@@ -22,7 +22,7 @@
     <div class="tracking-app">
         <h1>Vehicle Tracking System</h1>
         <header>
-            <form class="register-form" id="register-form">
+            <form class="register-form" id="register-form" method="post">
                 <div class="form-content">
                     <label for="vehicle-make">Make</label>
                     <input type="text" placeholder="Enter vehicle make" required class="register-form-input" id="vehicle-make"/>
@@ -42,10 +42,10 @@
         <main>
             <div class="registered-vehicles-container">
                 <div class="registered-vehicles" id="vehicle">
-                    <div class="vehicles-list">
-                        <div class="vehicle-list-make">BMW</div>
+                    <div class="vehicles-list" id="vehicles-list">
+                        <!-- <div class="vehicle-list-make">BMW</div>
                         <div class="vehicle-list-model">M3</div>
-                        <div class="vehicle-list-regNum">NH UI 21 GP</div>
+                        <div class="vehicle-list-regNum">NH UI 21 GP</div> -->
                     </div>
                 </div>
             </div>

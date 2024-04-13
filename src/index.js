@@ -45,11 +45,33 @@ function error(err){
 }
 
 //register vehicle function
-function registerVehicle(){
-    axios.post("https://localhost:8080/api/vehicle/",
-    {make,model,registrationNumber})
+function registerVehicle(make,model,regNumber){
+    axios.post("http://localhost:8080/api/vehicle", {make,model,regNumber}, 
+    { headers: { 'Content-Type': 'application/json' } })
     .then(response => {
         console.log("vehicle registered", response.data);
+    })
+    .catch(error => {
+        console.error("error registering", error);
+    });
+}
+//fetch registered vehicles
+function fetchVehicleData() {
+    axios.get("http://localhost:8080/api/vehicle/get-vehicles")
+    .then(response => {
+        let vehicleHtml = "";
+
+        response.data.forEach(function (vehicle){
+           vehicleHtml += 
+           `<div>
+           Make: ${vehicle.make},
+            Model: ${vehicle.model}, 
+            Registration Number: ${vehicle.regNumber}
+           </div>`;
+
+           let vehicleElement = document.getElementById("vehicles-list");
+           vehicleElement.innerHTML = vehicleHtml;
+        });
     })
     .catch(error => {
         console.error("error registering", error);
@@ -59,27 +81,13 @@ function registerVehicle(){
 function handleRegisterSubmit(event){
     event.preventDefault();
     
-    let make = document.querySelector("#vehicle-make").value;
-    let model = document.querySelector("#vehicle-model").value;
-    let registrationNumber = document.querySelector("#vehicle-regNum").value; 
-
-    registerVehicle(make, model, registrationNumber);
+    let make = document.getElementById("vehicle-make").value;
+    let model = document.getElementById("vehicle-model").value;
+    let regNumber = document.getElementById("vehicle-regNum").value; 
+    registerVehicle(make, model, regNumber);
 }
 
-let registerForm = document.getElementById("#register-form");
+let registerForm = document.getElementById("register-form");
 registerForm.addEventListener("submit", handleRegisterSubmit);
 
-//fetch registered vehicles
-function fetchVehicleData(response) {
-    axios.get("https://localhost:8080/api/vehicle/{id}")
-    .then(response => {
-        let vehicleHtml = "";
-
-        response.data,forEach(function (make, model, registrationNumber){
-            `<div></div>`
-        });
-    })
-    .catch(error => {
-        console.error("error registering", error);
-    });
-}
+fetchVehicleData();
