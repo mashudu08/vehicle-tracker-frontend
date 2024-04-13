@@ -1,20 +1,3 @@
-function registerVehicle(){
-    axios.post("")
-}
-function handleRegisterSubmit(event){
-    event.preventDefault();
-    
-    let make = document.querySelector("#vehicle-make").value;
-    let model = document.querySelector("#vehicle-model").value;
-    let registrationNumber = document.querySelector("#vehicle-regNum").value; 
-}
-
-let registerForm = document.getElementById("#register-form");
-registerForm.addEventListener("submit", handleRegisterSubmit);
-
-//register vehicle function
-
-
 var map = L.map('map');
 map.setView([51.505, -0.09], 13);
 
@@ -59,4 +42,44 @@ function error(err){
     }else{
         alert("cannot get current location");
     }
+}
+
+//register vehicle function
+function registerVehicle(){
+    axios.post("https://localhost:8080/api/vehicle/",
+    {make,model,registrationNumber})
+    .then(response => {
+        console.log("vehicle registered", response.data);
+    })
+    .catch(error => {
+        console.error("error registering", error);
+    });
+}
+
+function handleRegisterSubmit(event){
+    event.preventDefault();
+    
+    let make = document.querySelector("#vehicle-make").value;
+    let model = document.querySelector("#vehicle-model").value;
+    let registrationNumber = document.querySelector("#vehicle-regNum").value; 
+
+    registerVehicle(make, model, registrationNumber);
+}
+
+let registerForm = document.getElementById("#register-form");
+registerForm.addEventListener("submit", handleRegisterSubmit);
+
+//fetch registered vehicles
+function fetchVehicleData(response) {
+    axios.get("https://localhost:8080/api/vehicle/{id}")
+    .then(response => {
+        let vehicleHtml = "";
+
+        response.data,forEach(function (make, model, registrationNumber){
+            `<div></div>`
+        });
+    })
+    .catch(error => {
+        console.error("error registering", error);
+    });
 }
