@@ -3,7 +3,74 @@ body{
     font-family: "DM Sans", sans-serif;
 }
 
+h1{
+    padding: 0 20px;
+}
+
+.container h3{
+    text-align: center;
+}
+header{
+    padding: 0 30px;
+    display: block;
+    margin: 20px auto;
+}
+
+.register-form{
+    margin: 20px auto;
+}
+
+.register-form-input{
+    background-color: #f9f7f3;
+    border: none;
+    border-radius: 6px;
+    width: 30%;
+    font-size: 16px;
+    padding: 15px 20px;
+    margin: 10px;
+}
+
+.register-form-btn{
+    background-color: #2100f4;
+    padding: 10px 15px;
+    border: none;
+    font-size: 16px;
+    margin-left: 2px;
+    border-radius: 6px;
+    color: white;
+}
+
 #map { 
     height: 350px; 
     width: 600px;
+    /* flex: 1; */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th {
+    background-color: #f2f2f2;
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-evenly;
+    /* flex-wrap: wrap; */
+}
+
+.registered-vehicles {
+
+    margin-right: 20px; /* Adjust margin as needed */
 }
