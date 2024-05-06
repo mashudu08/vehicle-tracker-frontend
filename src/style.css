@@ -16,9 +16,42 @@ header{
     margin: 20px auto;
 }
 
+.login-container{
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 50px 100px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.login-form{
+    margin: 20px auto;
+}
+
+.login-form-input{
+    background-color: #f9f7f3;
+    border: none;
+    border-radius: 6px;
+    /* width: 50%; */
+    font-size: 14px;
+    padding: 15px 20px;
+    margin: 10px;
+}
+
+.login-form-btn{
+    background-color: #2100f4;
+    padding: 10px 15px;
+    border: none;
+    font-size: 16px;
+    margin-left: 2px;
+    border-radius: 6px;
+    color: white;
+}
+
 .register-form{
     margin: 20px auto;
 }
+
 
 .register-form-input{
     background-color: #f9f7f3;
